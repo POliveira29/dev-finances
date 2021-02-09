@@ -1,0 +1,265 @@
+/* Global ==========================*/
+:root {
+  --clr-darkblue: #363f57;
+  --clr--green: #49aa26;
+  --clr--lightgreen: #5bd131;
+  --clr--red: #e92929;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 93.75%; /* 15px */
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: "Poppins", sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+}
+
+input:focus {
+  outline: 2px solid var(--clr--lightgreen);
+}
+
+.container {
+  width: min(90vw, 800px);
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Title ==========================*/
+.title {
+  margin: 1.2rem 0.8rem;
+  font-weight: 400;
+  color: #fff9f9;
+}
+
+/* Links & Buttons ==========================*/
+a {
+  text-decoration: none;
+  color: var(--clr--green);
+}
+
+a:hover {
+  color: var(--clr--lightgreen);
+}
+
+.button {
+  width: 40%;
+  height: 50px;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.button--cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr--red);
+  border: 2px solid var(--clr--red);
+  background-color: transparent;
+}
+
+.button--cancel:hover {
+  color: #fff;
+  background-color: var(--clr--red);
+}
+
+.button--save {
+  color: #fff;
+  background-color: var(--clr--green);
+}
+
+.button--save:hover {
+  background-color: var(--clr--lightgreen);
+}
+
+.transactions__btn-new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+/* Header ==========================*/
+.header {
+  padding: 2rem 0 10rem;
+  text-align: center;
+  background-color: #2d4a22;
+}
+
+.logo {
+  font-weight: 100;
+  color: #fff9f9;
+}
+
+/* Balance ==========================*/
+.balance {
+  margin-top: -8rem;
+}
+
+.card {
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  color: var(--clr-darkblue);
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.card__description {
+  margin-top: 1rem;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.card--active {
+  color: #fff;
+  background-color: var(--clr--green);
+}
+
+/* Transactions ==========================*/
+.transactions {
+  display: block;
+  overflow-x: auto;
+  color: #969cb3;
+}
+
+.title--secondary {
+  color: var(--clr-darkblue);
+}
+
+.transactions__table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+}
+
+.transactions__head {
+  background-color: #fff;
+}
+
+.transactions__row {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: all 0.4s;
+}
+
+.transactions__row:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.transactions__data {
+  padding: 1rem 2rem;
+  text-align: left;
+  font-weight: 400;
+  color: #83848b;
+  border-radius: 0.25rem;
+}
+
+.data__description {
+  color: var(--clr-darkblue);
+}
+
+.data__income {
+  color: #12a454;
+}
+
+.data__expense {
+  color: var(--clr--red);
+}
+
+/* Modal ==========================*/
+.modal-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  width: 80%;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  background-color: #f0f2f5;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-top: 1rem;
+}
+
+.value__description {
+  opacity: 0.7;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Footer ==========================*/
+.footer {
+  position: relative;
+  padding: 4rem 0 2rem;
+  text-align: center;
+  color: var(--clr-darkblue);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Responsive ==========================*/
+@media only screen and (min-width: 800px) {
+  html {
+    font-size: 87.5%; /* 14px */
+  }
+  .balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
