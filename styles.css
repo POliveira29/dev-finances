@@ -26,6 +26,16 @@ input {
   border: none;
 }
 
+input[type="radio"] {
+  width: 13px;
+  height: 13px;
+  margin-right: 0.3rem;
+}
+
+input[type="radio"]:hover ~ label {
+  opacity: 0.5;
+}
+
 input:focus {
   outline: 2px solid var(--clr--lightgreen);
 }
@@ -97,6 +107,16 @@ a:hover {
 .transactions__btn-new {
   display: inline-block;
   margin-bottom: 0.8rem;
+  background-color: #fff;
+  color: var(--clr--green);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.transactions__btn-new:hover {
+  background-color: var(--clr--green);
+  color: #fff;
 }
 
 /* Header ==========================*/
@@ -212,6 +232,7 @@ a:hover {
 .active {
   opacity: 1;
   visibility: visible;
+  transition: all 0.3s ease-in;
 }
 
 .modal {
@@ -225,6 +246,20 @@ a:hover {
 .modal__content {
   display: flex;
   flex-direction: column;
+}
+
+.type-transaction {
+  display: flex;
+}
+
+.wrapper--input {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.wrapper--input label {
+  transition: all 0.1s ease-in;
 }
 
 .input-group {

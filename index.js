@@ -10,6 +10,15 @@ const Modal = {
     document.querySelector(".modal-overlay").classList.remove("active");
     Form.clearFields();
   },
+  typeTransaction() {
+    if (document.getElementById("radio-expenses").checked === true) {
+      document.getElementById("amount").value = "-";
+    } else if (document.getElementById("radio-incomes").checked === true) {
+      document.getElementById("amount").value = "";
+    } else {
+      alert("Selecione um tipo de transação");
+    }
+  },
 };
 
 const Storage = {
@@ -37,6 +46,11 @@ const Transaction = {
   incomes() {
     let income = 0;
     // Pegar as transações
+    /*for (let i = 0; i < Transaction.all.length; i++) {
+      if (Transaction.all[i] > 0) {
+        income += transaction.amount;
+      }
+    }*/
     Transaction.all.forEach((transaction) => {
       // Para cada transação, se for maior que 0
       if (transaction.amount > 0) {
@@ -105,8 +119,9 @@ const Utils = {
     return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`;
   },
   formatAmount(value) {
-    value = Number(value) * 100;
-    return value;
+    console.log(value);
+    value = value * 100;
+    return Math.round(value);
   },
   formatCurrency(value) {
     // Ternário pra verificar se o valor for < 0 recebe o sinal de negativo se não recebe nada
@@ -125,8 +140,10 @@ const Utils = {
 };
 
 const Form = {
+  expenses: document.getElementById("radio-expenses"),
+  incomes: document.getElementById("radio-incomes"),
   description: document.getElementById("description"),
-  amount: document.getElementById("value"),
+  amount: document.getElementById("amount"),
   date: document.getElementById("date"),
   getValues() {
     return {
@@ -149,6 +166,12 @@ const Form = {
     //Desestruturação do objeto, retirando da função getValues
     const { description, amount, date } = Form.getValues();
     if (
+      document.getElementById("radio-expenses").checked === false &&
+      document.getElementById("radio-incomes").checked === false
+    ) {
+      throw new Error("Por favor, selecione o tipo de transação");
+    }
+    if (
       description.trim() === "" ||
       amount.trim() === "" ||
       date.trim() === ""
@@ -157,6 +180,8 @@ const Form = {
     }
   },
   clearFields() {
+    Form.expenses.checked = false;
+    Form.incomes.checked = false;
     Form.description.value = "";
     Form.amount.value = "";
     Form.date.value = "";
@@ -180,6 +205,14 @@ const Form = {
   },
 };
 
+$(function () {
+  $("#amount").maskMoney({
+    thousands: "",
+    decimal: ".",
+    allowNegative: true,
+  });
+});
+
 const App = {
   init() {
     /* Outra forma, mais reduzida, passando a função como atalho.
@@ -200,21 +233,3 @@ const App = {
 };
 
 App.init();
-
-/*[
-  {
-    description: "Luz",
-    amount: -50000,
-    date: "23/01/2021",
-  },
-  {
-    description: "Criação Website",
-    amount: 500000,
-    date: "23/01/2021",
-  },
-  {
-    description: "Internet",
-    amount: -20000,
-    date: "23/01/2021",
-  },
-]*/

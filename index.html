@@ -62,6 +62,17 @@
         <div class="modal">
             <div class="modal__content">
                 <h2>Nova Transação</h2>
+                <div class="type-transaction">
+                    <div class="wrapper--input">
+                        <input onclick="Modal.typeTransaction()" type="radio" name="expenses" id="radio-expenses">
+                        <label for="radio-expenses">Despesas</label>
+                    </div>
+                    <div class="wrapper--input">
+                        <input onclick="Modal.typeTransaction()" type="radio" name="expenses" id="radio-incomes">
+                        <label for="radio-incomes">Receita</label>
+                    </div>
+                </div>
+
                 <form action="" onsubmit="Form.submit(event)">
                     <div class="input-group">
                         <label class="sr-only" for="description">Descrição</label>
@@ -69,9 +80,7 @@
                     </div>
                     <div class="input-group">
                         <label class="sr-only" for="value">Valor</label>
-                        <input type="number" step="0.01" name="value" id="value" placeholder="0,00">
-                        <small class="value__description">Para despesas utilize o sinal de "-" e "," para casas
-                            decimais</small>
+                        <input type="text" name="value" id="amount" placeholder="R$0,00">
                     </div>
                     <div class="input-group">
                         <label class="sr-only" for="date">Data</label>
@@ -88,6 +97,9 @@
     <footer class="footer">
         <p>dev.finance$</p>
     </footer>
+    <script src="./src/lib/jquery.js"></script>
+    <script src="./src/lib/jquery.mask.min.js"></script>
+    <script src="./src/lib/jquery.maskMoney.min.js"></script>
     <script src="./index.js"></script>
 </body>
 
