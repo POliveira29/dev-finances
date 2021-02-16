@@ -15,6 +15,7 @@ data daquela transação e visualizar o total.
 ## 🎨 Layout
 
 ![Tela Principal](https://imgur.com/SFI8XGn.png)
+![Adicionar Transação](https://imgur.com/IG6ol7M.png)
 
 ## Utilitários
 
