@@ -25,8 +25,8 @@ data daquela transação e visualizar o total.
 ### Web
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  ![Tela Principal](https://imgur.com/SFI8XGn.png)
-  ![Adicionar Transação](https://imgur.com/IG6ol7M.png)
+  <img alt="tela-principal" src="https://imgur.com/SFI8XGn.png" width="400px">
+  <img alt="tela-transação" src="https://imgur.com/IG6ol7M.png" width="400px">
 </p>
 
 
