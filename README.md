@@ -14,8 +14,21 @@ data daquela transação e visualizar o total.
 
 ## 🎨 Layout
 
-![Tela Principal](https://imgur.com/SFI8XGn.png)
-![Adicionar Transação](https://imgur.com/IG6ol7M.png)
+### Mobile
+
+<p align="center">
+  <img alt="tela-principal-mobile" src="https://imgur.com/std62IG.png" width="200px">
+
+  <img alt="tela-transação-mobile" src="https://imgur.com/j6yQp2o.png" width="200px">
+</p>
+
+### Web
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+  ![Tela Principal](https://imgur.com/SFI8XGn.png)
+  ![Adicionar Transação](https://imgur.com/IG6ol7M.png)
+</p>
+
 
 ## Utilitários
 
