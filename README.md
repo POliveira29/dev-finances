@@ -14,6 +14,8 @@ data daquela transação e visualizar o total.
 
 ## 🎨 Layout
 
+![Tela Principal](https://imgur.com/SFI8XGn.png)
+
 ## Utilitários
 
 - Fontes:  [Poppins](https://fonts.google.com/specimen/Poppins)
