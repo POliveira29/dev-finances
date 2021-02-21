@@ -227,6 +227,7 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
+  z-index: 1;
 }
 
 .active {
@@ -277,6 +278,105 @@ a:hover {
   margin-top: 2rem;
 }
 
+/* Welcome Modal Tour ==========================*/
+.welcome-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* opacity: 0;
+  visibility: hidden; */
+  z-index: 1;
+}
+.welcome-modal__close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+}
+.welcome-modal__close::after,
+.welcome-modal__close::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 12px;
+  width: 30px;
+  height: 6px;
+  border-radius: 32px;
+  background-color: #fff;
+}
+.welcome-modal__close::after {
+  content: "";
+  transform: rotate(-45deg);
+}
+.welcome-modal__close::before {
+  content: "";
+  transform: rotate(45deg);
+}
+.welcome-modal__content {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 0.25rem;
+  background-color: #f0f2f5;
+}
+.welcome-modal__content > img {
+  width: 100%;
+  object-fit: contain;
+}
+.welcome-modal__footer {
+  padding: 2rem;
+  background-color: #fff;
+}
+.welcome-modal__title {
+  text-align: center;
+}
+.welcome-modal__description {
+}
+.welcome-modal__buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+}
+/* Intro Guide Tooltip ==========================*/
+
+.customTooltip * {
+  color: #4a4a4a;
+  font-size: 18px;
+}
+
+.customTooltip {
+  width: 300px;
+  background-color: #12a454;
+}
+
+.customTooltip .introjs-tooltip-title {
+  color: var(--clr--green);
+}
+
+.customTooltip .introjs-button {
+  font-weight: 600;
+  text-shadow: none;
+  color: #fff;
+}
+
+.customTooltip .introjs-prevbutton {
+  background-color: #fff;
+  color: var(--clr--green);
+}
+.customTooltip .introjs-nextbutton {
+  background-color: var(--clr--green);
+}
+
+.customTooltip .introjs-button:focus {
+  background-color: var(--clr--green);
+  color: #fff;
+}
+
 /* Footer ==========================*/
 .footer {
   position: relative;
@@ -288,6 +388,14 @@ a:hover {
 }
 
 /* Responsive ==========================*/
+@media only screen and (max-width: 425px) {
+  .welcome-modal__content {
+    width: 80%;
+  }
+  .welcome-modal__close {
+    transform: translate(280px, -70px);
+  }
+}
 @media only screen and (min-width: 800px) {
   html {
     font-size: 87.5%; /* 14px */
