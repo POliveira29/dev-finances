@@ -335,8 +335,6 @@ a:hover {
 .welcome-modal__title {
   text-align: center;
 }
-.welcome-modal__description {
-}
 .welcome-modal__buttons {
   display: flex;
   justify-content: space-between;
